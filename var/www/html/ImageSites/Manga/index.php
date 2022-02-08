@@ -9,6 +9,7 @@
         <meta charset="utf-8">
         <title>Manga | TESTING</title>
         <link rel="stylesheet" type="text/css" href="/css/theme.css">
+        <link rel="stylesheet" type="text/css" href="/css/manga.css">
         <style>
             body
             {
@@ -35,18 +36,6 @@
             .center
             {
                 text-align: center;
-            }
-            
-            #listContain
-            {
-                background-color: #444444;
-                
-                border-radius: 10px;
-                border: 2px solid orangered;
-
-                width: 80%;
-                min-width: 960px;
-                margin: 30px auto;
             }
 
             .workList
@@ -118,7 +107,7 @@
 
         <h1>Manga</h1>
 
-        <div id="listContain">
+        <div class="listContain">
             <br/>
             <hr style="width: 90%;"/>
             <?php

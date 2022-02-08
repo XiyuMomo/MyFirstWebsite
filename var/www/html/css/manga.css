@@ -1,0 +1,11 @@
+.listContain
+{
+    background-color: #444444;
+
+    border-radius: 10px;
+    border: 2px solid orangered;
+
+    width: 80%;
+    min-width: 960px;
+    margin: 30px auto;
+}
