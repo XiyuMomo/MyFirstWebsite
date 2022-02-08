@@ -1,0 +1,1 @@
+# This directory is used to storage the images of the website.
