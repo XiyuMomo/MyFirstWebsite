@@ -1,5 +1,6 @@
 /.idea/
 /others/
+/var/www/html/TEST/
 
 *.jpg
 *.mp4

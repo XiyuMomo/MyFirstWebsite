@@ -1,0 +1,204 @@
+<?php
+    session_start();
+    require ("/COMMAND/PHP/lib/LOGIN.php");
+    $ISLOGGED = ISLOGGED();
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var PageNum = ##Page#;            //当前页码
+            var TotalPage = ##Total#;         //总页数
+            var TitleText;              //标题
+            var PageTip;                //==
+            var PreviousPage;           //上一页的地址
+            var NextPage;               //下一页的地址
+
+            var ImageWidth = ##ImageWidth#      //图片宽度
+            var ImageHeight = ##ImageHeight#    //图片高度
+            var MaxWidth = 900;                //允许最大宽度
+            var MaxHeight = parseInt(MaxWidth * ImageHeight / ImageWidth);
+
+            //页码补零函数
+            function zero(num)
+            {
+                var s = '';
+                if(TotalPage<10)
+                {
+                    s = num.toString();
+                }
+                else if(TotalPage<100)
+                {
+                    s = (num+100).toString();
+                    s = s.substr(1,2);
+                }
+                else if(TotalPage<1000)
+                {
+                    s = (num+1000).toString();
+                    s = s.substr(1,3);
+                }
+                else if(TotalPage<10000)
+                {
+                    s = (num+10000).toString();
+                    s = s.substr(1,4);
+                }
+                else if(TotalPage<100000)
+                {
+                    s = (num+100000).toString();
+                    s = s.substr(1,5);
+                }
+                else{
+                    s = (num+1000000).toString();
+                    s = s.substr(1,6);
+                }
+                return s;
+            }
+
+            function alertFirst()
+            {
+                window.alert("已是第一页！");
+            }
+            function alertLast()
+            {
+                window.alert("已是最后一页！");
+            }
+
+            PageTip = "第 " + PageNum.toString() + " 页&nbsp&nbsp&nbsp" + "共 " + TotalPage.toString() + " 页";      //页码提示显示处理
+
+            NextPage = zero(PageNum+1)+".html";                                                                     //下一页链接
+            PreviousPage = zero(PageNum-1)+".html";                                                                 //上一页链接
+        </script>
+        
+        <meta charset="utf-8">      <!--设置字符集utf-8-->
+        <title id="title">PAGE - ##Page# | TESTING</title>  <!--页面标题-->
+        <link rel="stylesheet" type="text/css" href="/css/theme.css">
+        
+        <!--样式设计-->
+        <style>
+            body
+            {
+                text-align: center;
+            }
+
+            .pagetip
+            {
+                margin: 10px auto;
+                font-size: 20px;
+                font-family: CangErYuMo3;
+                color: #ffffff;
+            }
+            #imageContain
+            {
+                width: 60%;
+                min-width: 960px;
+                margin: 30px auto;
+
+                background-color: #444444;
+                
+                border-radius: 10px;
+                border: 2px solid orangered;
+
+            }
+            select
+            {
+                width: 100px;
+                height: 50px;
+                font-size: 20px;
+                font-family: CangErYuMo2;
+            }
+
+            a.pageOperate
+            {
+                text-decoration: none;
+                font-family: "CangErYuMo4";
+                font-size: 30px;
+                color: orangered;
+            }
+            a.pageOperate:link
+            {
+                color: orangered;
+            }
+            a.pageOperate:visited
+            {
+                color: orangered;
+            }
+            a.pageOperate:hover
+            {
+                color: #ffffff;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <?php
+            include("/var/www/secret/header.php");
+        ?>
+
+        <div style="margin: 0 auto; text-align: center;">
+            <a class="backSmall" href="/index.html">BACK TO MAINPAGE</a>    <!--返回主页-->
+            <hr style="width: 60%;"/>
+            <a class="backSmall" href="index.html">BACK TO COVER</a>    <!--返回封面-->
+        </div>
+        
+        <!--图片显示-->
+        <div id="imageContain">
+            <div class="pagetip">
+                <span id="pagetip0"></span>     <!--顶部页码提示-->
+            </div>
+            <hr style="width: 90%;"/>
+
+            <img loading="eager" id="mainimage" src="##ImageSrc#" usemap="#manga"/>
+            <map name="manga">
+                <area shape="default" id="nextPage">
+            </map>
+
+            <hr style="width: 90%;"/>
+            <div class="pagetip">
+                <span id="pagetip1"></span>     <!--底部页码提示-->
+            </div>
+        </div>
+
+        <div>
+            <a id="previous" class="pageOperate">上一页</a>
+            &nbsp;&nbsp;
+            <select class="selectPage" id="selectPage" onchange="jump()">
+                ##Select#
+            </select>
+            &nbsp;&nbsp;
+            <a id="next" class="pageOperate">下一页</a>
+        </div>
+
+        <script>
+            function jump()
+            {
+                var val = document.getElementById("selectPage").value;
+                window.location.href = val+".html";
+            }
+        </script>
+        
+        
+        <script>
+            if(PageNum == 1)
+            {
+                PreviousPage = "javascript:alertFirst()";
+            }
+            if(PageNum == TotalPage)
+            {
+                NextPage = "javascript:alertLast();";
+            }
+
+            document.getElementById("pagetip0").innerHTML = PageTip;    //顶部页码提示
+            document.getElementById("pagetip1").innerHTML = PageTip;    //底部页码提示
+
+            document.getElementById("nextPage").href = NextPage;        //下一页链接
+            document.getElementById("next").href = NextPage;            //下一页链接
+            document.getElementById("previous").href = PreviousPage;    //上一页链接
+
+            document.getElementById("mainimage").style = "width: "+ImageWidth+"px;"+
+                                                         "height: "+ImageHeight+"px;"+
+                                                         "max-width: "+MaxWidth+"px;"+
+                                                         "max-height: "+MaxHeight+"px;";
+        </script>
+    </body>
+</html>

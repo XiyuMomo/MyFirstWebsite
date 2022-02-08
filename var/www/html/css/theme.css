@@ -1,0 +1,174 @@
+/*引用外部字体-仓耳与墨*/
+@font-face
+{
+    font-family: CangErYuMo1;
+    src: url("font/仓耳与墨W01.ttf");
+}
+@font-face
+{
+    font-family: CangErYuMo2;
+    src: url("font/仓耳与墨W02.ttf");
+}
+@font-face
+{
+    font-family: CangErYuMo3;
+    src: url("font/仓耳与墨W03.ttf");
+}
+@font-face
+{
+    font-family: CangErYuMo4;
+    src: url("font/仓耳与墨W04.ttf");
+}
+@font-face
+{
+    font-family: CangErYuMo5;
+    src: url("font/仓耳与墨W05.ttf");
+}
+
+/*全局样式*/
+body
+{
+    background-color: #222222;
+    color: #ffffff;
+}
+hr
+{
+    border: 1px solid orangered;
+}
+h1
+{
+    color: orangered;
+    text-align: center;
+    font-family: CangErYuMo4;
+    font-size: 70px;
+}
+h3
+{
+    color: orangered;
+    text-align: center;
+    font-family: CangErYuMo3;
+    font-size: 45px;
+}
+
+/*导航样式*/
+/*主页导航容器*/
+.navigationContain
+{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+/*主导航样式*/
+a.navigation
+{
+    text-decoration: none;
+    font-family: "CangErYuMo4";
+    font-size: 50px;
+}
+a.navigation:link
+{
+    color: #ffffff;
+}
+a.navigation:visited
+{
+    color: #ffffff;
+}
+a.navigation:hover
+{
+    color: #888888;
+}
+/*返回链接样式*/
+a.backNormal
+{
+    text-decoration: none;
+    font-family: "CangErYuMo5";
+    font-size: 50px;
+}
+a.backNormal:link
+{
+    color: #ffffff;
+}
+a.backNormal:visited
+{
+    color: #ffffff;
+}
+a.backNormal:hover
+{
+    color: #888888;
+}
+a.backSmall
+{
+    text-decoration: none;
+    font-family: "CangErYuMo4";
+    font-size: 30px;
+}
+a.backSmall:link
+{
+    color: #ffffff;
+}
+a.backSmall:visited
+{
+    color: #ffffff;
+}
+a.backSmall:hover
+{
+    color: #888888;
+}
+
+/*顶部区域样式*/
+.headerContain
+{
+    width: 98%;
+    height: 20px;
+    margin: 5px auto;
+    font-size: 15px;
+    font-family: "CangErYuMo2";
+    color: orange;
+}
+.userInfoArea
+{
+    float: left;
+    width: 50%;
+    text-align: left;
+}
+.userOptionArea
+{
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+/*用户操作样式*/
+a.userOption
+{
+    text-decoration: none;
+}
+a.userOption:link
+{
+    color: orange;
+}
+a.userOption:visited
+{
+    color: orange;
+}
+a.userOption:hover
+{
+    text-decoration: underline orange;
+}
+
+/*警告样式*/
+.warning1
+{
+    font-size: 15px;
+    font-family: CangErYuMo3;
+    color: orangered;
+}
+/*注释样式*/
+.remark1
+{
+    height: 35px;
+    font-size: 15px;
+    font-family: "CangErYuMo3";
+    text-align: left;
+    color: orangered;
+}
