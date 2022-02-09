@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require ("/COMMAND/PHP/lib/LOGIN.php");
+    require ("/command/PHP/lib/LOGIN.php");
     $ISLOGGED = ISLOGGED();
 ?>
 <!DOCTYPE html>
