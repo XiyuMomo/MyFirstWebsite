@@ -56,6 +56,17 @@ h3
     font-family: CangErYuMo3;
     font-size: 45px;
 }
+article
+{
+    color: #ffffff;
+    font-family: CangErYuMo2;
+    font-size: 15px;
+}
+strong
+{
+    color: orangered;
+    font-family: CangErYuMo3;
+}
 
 /*导航样式*/
 /*主页导航容器*/

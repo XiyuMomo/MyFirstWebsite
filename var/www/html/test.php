@@ -5,6 +5,10 @@
     <title>TEST</title>
     <script type="text/javascript" src="js/lib/cookie.js"></script>
     <style>
+        body
+        {
+            cursor: wait;
+        }
         .modal
         {
             position: fixed;
