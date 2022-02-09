@@ -111,22 +111,14 @@
             <br/>
             <hr style="width: 90%;"/>
             <?php
-                $dbhost = 'localhost';
-                $dbuser = 'MangaViewer';
-                $dbpass = '114514';
-                $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
-                mysqli_query($conn, "set names utf8");
-                mysqli_select_db($conn, 'Info');
+                require ("/COMMAND/PHP/lib/MYSQL_CONN_MangaViewer.php");
+                mysqli_select_db($MYSQL_CONN_MangaViewer, 'Info');
 
-                $q1 = mysqli_query($conn, "SELECT COUNT(*) FROM Images_Manga;");
+                $q1 = mysqli_query($MYSQL_CONN_MangaViewer, "SELECT COUNT(*) FROM Images_Manga;");
                 $r1 = mysqli_fetch_array($q1, MYSQLI_NUM);
                 $serial = $r1[0];
 
-                $code = 1000000 + $serial;
-                $code = (string)$code;
-                $code = substr($code,1,6);
-
-                $sql = mysqli_query($conn, "SELECT Age,Title,Code,Page FROM Images_Manga;");
+                $sql = mysqli_query($MYSQL_CONN_MangaViewer, "SELECT Age,Title,Code,Page FROM Images_Manga;");
 
                 for($i=1;$i<=$serial;$i++)
                 {
