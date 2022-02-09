@@ -75,7 +75,7 @@
                     echo '<table class="workList">';
                     echo "<tr>";
                     echo '<td class="'.getAgeClass($row['Age']).'">'.$row['Age'].'</td>';
-                    echo '<td class="workTitle"><a href="'.$row['Code'].'/index.html">'.$row['Title'].'</a></td>';
+                    echo '<td class="workTitle"><a href="'.$row['Code'].'/index.php">'.$row['Title'].'</a></td>';
                     echo '<td class="workPageNum">'.$row['Page'].' 页</td>';
                     echo "</tr>";
                     echo "</table>";

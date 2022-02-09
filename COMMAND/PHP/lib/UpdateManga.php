@@ -83,13 +83,13 @@
     {
         global $info;
 
-        $totalpage = (int)$info['Page'];
-        $firstPage = zero(1, $totalpage);
+        $totalPage = (int)$info['Page'];
+        $firstPage = zero(1, $totalPage);
 
         $template = file(constant("templateIndex"));
         $rows = count($template);
 
-        $indexPath = constant("site").constant("mangaSite")."/".$info['Code']."/index.html";
+        $indexPath = constant("site").constant("mangaSite")."/".$info['Code']."/index.php";
         $fp = fopen($indexPath,'w');
         
         for($i=0;$i<$rows;$i++)
