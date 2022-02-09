@@ -37,58 +37,6 @@
             {
                 text-align: center;
             }
-
-            .workList
-            {
-                margin: 0 auto;
-                width: 90%;
-                border: 0;
-                font-family: "CangErYuMo2";
-                color: #dddddd;
-            }
-            .workTitle
-            {
-                border-left: 2px solid orangered;
-                font-size: 25px;
-                text-align: left;
-                border-right: 2px solid orangered;
-            }
-            .workPageNum
-            {
-                text-align: center;
-                vertical-align: middle;
-                width: 70px;
-                font-size: 18px;
-                font-family: "CangErYuMo3";
-            }
-
-            .ALL
-            {
-                text-align: center;
-                vertical-align: middle;
-                width: 70px;
-                font-size: 16px;
-                font-family: "CangErYuMo3";
-                color: #66ff66;
-            }
-            .R18
-            {
-                text-align: center;
-                vertical-align: middle;
-                width: 70px;
-                font-size: 16px;
-                font-family: "CangErYuMo3";
-                color: #ff99cc;
-            }
-            .R18G
-            {
-                text-align: center;
-                vertical-align: middle;
-                width: 70px;
-                font-size: 16px;
-                font-family: "CangErYuMo3";
-                color: #cc0000;
-            }
         </style>
     </head>
     <body>
@@ -111,6 +59,7 @@
             <br/>
             <hr style="width: 90%;"/>
             <?php
+                require ("/COMMAND/PHP/lib/GetAgeClass.php");
                 require ("/COMMAND/PHP/lib/MYSQL_CONN_MangaViewer.php");
                 mysqli_select_db($MYSQL_CONN_MangaViewer, 'Info');
 
@@ -125,7 +74,7 @@
                     $row = mysqli_fetch_array($sql, MYSQLI_ASSOC);
                     echo '<table class="workList">';
                     echo "<tr>";
-                    echo '<td class="'.$row['Age'].'">'.$row['Age'].'</td>';
+                    echo '<td class="'.getAgeClass($row['Age']).'">'.$row['Age'].'</td>';
                     echo '<td class="workTitle"><a href="'.$row['Code'].'/index.html">'.$row['Title'].'</a></td>';
                     echo '<td class="workPageNum">'.$row['Page'].' 页</td>';
                     echo "</tr>";

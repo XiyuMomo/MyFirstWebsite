@@ -9,3 +9,64 @@
     min-width: 960px;
     margin: 30px auto;
 }
+
+.age_all
+{
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+    font-size: 16px;
+    font-family: "CangErYuMo3";
+    color: #66ff66;
+}
+.age_r15
+{
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+    font-size: 16px;
+    font-family: "CangErYuMo3";
+    color: #66ccff;
+}
+.age_r18
+{
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+    font-size: 16px;
+    font-family: "CangErYuMo3";
+    color: #ff99cc;
+}
+.age_r18g
+{
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+    font-size: 16px;
+    font-family: "CangErYuMo3";
+    color: #cc0000;
+}
+
+.workList
+{
+    margin: 0 auto;
+    width: 90%;
+    border: 0;
+    font-family: "CangErYuMo2";
+    color: #dddddd;
+}
+.workTitle
+{
+    border-left: 2px solid orangered;
+    font-size: 25px;
+    text-align: left;
+    border-right: 2px solid orangered;
+}
+.workPageNum
+{
+    text-align: center;
+    vertical-align: middle;
+    width: 70px;
+    font-size: 18px;
+    font-family: "CangErYuMo3";
+}
