@@ -58,6 +58,13 @@ h3
     width: 90%;
     margin: 0 auto;
 }
+/*返回键容器*/
+.backContain
+{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
 /*主导航样式*/
 a.navigation
 {
