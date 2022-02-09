@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require ("/COMMAND/PHP/lib/LOGIN.php");
+    require ("/command/PHP/lib/LOGIN.php");
     $ISLOGGED = ISLOGGED();
 ?>
 <!DOCTYPE html>
@@ -10,11 +10,6 @@
         <title>Texts | TESTING</title>
         <link rel="stylesheet" type="text/css" href="/css/theme.css">
         <style>
-            body
-            {
-                background-color: #222222;
-                color: #ffffff;
-            }
         </style>
     </head>
     <body>

@@ -1,5 +1,5 @@
 <?php
-    require("/COMMAND/PHP/lib/GetMangaConf.php");
+    require("/command/PHP/lib/GetMangaConf.php");
     getMangaConf();
     echo constant("site")."\n";
     echo constant("mangaSite")."\n";

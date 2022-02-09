@@ -40,7 +40,14 @@ h1
     color: orangered;
     text-align: center;
     font-family: CangErYuMo4;
-    font-size: 70px;
+    font-size: 75px;
+}
+h2
+{
+    color: orangered;
+    text-align: center;
+    font-family: CangErYuMo4;
+    font-size: 60px;
 }
 h3
 {

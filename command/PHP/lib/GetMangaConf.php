@@ -1,7 +1,7 @@
 <?php
     function getMangaConf()
     {
-        $conf = file("/COMMAND/conf/manga.conf");
+        $conf = file("/command/conf/manga.conf");
         $conf_rows = count($conf);
         for($i=0;$i<$conf_rows;$i++)
         {

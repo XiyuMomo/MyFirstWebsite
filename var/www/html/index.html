@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require ("/COMMAND/PHP/lib/LOGIN.php");
+    require ("/command/PHP/lib/LOGIN.php");
     $ISLOGGED = ISLOGGED();
 ?>
 <!DOCTYPE html>
@@ -10,12 +10,7 @@
         <title>MainPage | TESTING</title>
         <link rel="stylesheet" type="text/css" href="/css/theme.css">
         <style>
-            h1
-            {
-                color: orangered;
-                text-align: center;
-                font-size: 50px;
-            }
+
         </style>
     </head>
     <body>
@@ -52,11 +47,11 @@
             include("/var/www/secret/header.php");
         ?>
 
-        <h1 id="title">
+        <h2 id="title">
             Your IP：<?php
                 echo $_SERVER['REMOTE_ADDR'];
             ?>
-        </h1>
+        </h2>
 
         <div class="navigationContain">
             <hr />

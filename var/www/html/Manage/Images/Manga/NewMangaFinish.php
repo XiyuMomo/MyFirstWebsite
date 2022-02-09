@@ -44,7 +44,7 @@
         <hr width="90%" color="orangered"/>
 
         <?php
-            require("/COMMAND/PHP/lib/UpdateManga.php");
+            require("/command/PHP/lib/UpdateManga.php");
 
             $temp = file("temp");
             $totalpage = (int)$temp[6];

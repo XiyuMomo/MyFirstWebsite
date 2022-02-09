@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require ("/COMMAND/PHP/lib/LOGIN.php");
+    require ("/command/PHP/lib/LOGIN.php");
     $ISLOGGED = ISLOGGED();
 ?>
 <!DOCTYPE html>
@@ -108,7 +108,7 @@
             <input type="submit" class="submit" value="Create Account" />
         </form>
         <?php
-            require ("/COMMAND/PHP/lib/USER.php");
+            require ("/command/PHP/lib/USER.php");
 
             if(@$_POST['user']!=NULL)
             {

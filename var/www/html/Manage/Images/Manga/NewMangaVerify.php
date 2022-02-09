@@ -59,9 +59,9 @@
 
         <div class="output">
             <?php
-                require ("/COMMAND/PHP/lib/SHA35123.php");
-                require ("/COMMAND/PHP/lib/MYSQL_CONN_viewer.php");
-                require ("/COMMAND/PHP/lib/NUMSYS.php");
+                require ("/command/PHP/lib/SHA35123.php");
+                require ("/command/PHP/lib/MYSQL_CONN_viewer.php");
+                require ("/command/PHP/lib/NUMSYS.php");
 
                 if(!$MYSQL_CONN_viewer)
                 {
@@ -94,7 +94,7 @@
                 }
                 echo "<p>作者：".$artist."</p>";
 
-                require("/COMMAND/PHP/lib/LANGUAGE.php");
+                require("/command/PHP/lib/LANGUAGE.php");
                 $language = $_POST['language'];
                 echo "<p>语言：".short2local($language)."</p>";
 

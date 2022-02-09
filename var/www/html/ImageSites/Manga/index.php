@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require ("/COMMAND/PHP/lib/LOGIN.php");
+    require ("/command/PHP/lib/LOGIN.php");
     $ISLOGGED = ISLOGGED();
 ?>
 <!DOCTYPE html>
@@ -59,8 +59,8 @@
             <br/>
             <hr style="width: 90%;"/>
             <?php
-                require ("/COMMAND/PHP/lib/GetAgeClass.php");
-                require ("/COMMAND/PHP/lib/MYSQL_CONN_MangaViewer.php");
+                require ("/command/PHP/lib/GetAgeClass.php");
+                require ("/command/PHP/lib/MYSQL_CONN_MangaViewer.php");
                 mysqli_select_db($MYSQL_CONN_MangaViewer, 'Info');
 
                 $q1 = mysqli_query($MYSQL_CONN_MangaViewer, "SELECT COUNT(*) FROM Images_Manga;");
