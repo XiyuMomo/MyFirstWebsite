@@ -36,7 +36,10 @@
             <a class="navigation">Miscellaneous ( Virtual )</a>
             <hr />
             <a class="navigation">Miscellaneous ( Real )</a>
-            <hr />
         </div>
+
+        <?php
+        include ("/var/www/secret/foot.php");
+        ?>
     </body>
 </html>

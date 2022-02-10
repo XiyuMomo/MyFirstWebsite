@@ -84,5 +84,9 @@
             ?>
             <br/>
         </div>
+
+        <?php
+        include ("/var/www/secret/foot.php");
+        ?>
     </body>
 </html>

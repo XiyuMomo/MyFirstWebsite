@@ -30,5 +30,9 @@
             <a class="navigation">Reserve</a>
             <hr />
         </div>
+
+        <?php
+        include ("/var/www/secret/foot.php");
+        ?>
     </body>
 </html>

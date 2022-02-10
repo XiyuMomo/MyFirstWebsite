@@ -17,6 +17,7 @@
         <?php
         if($ISLOGGED)
         {
+            echo '<a class="userOption" href="">[个人设置]</a>&nbsp;&nbsp;';
             echo '<a class="userOption" href="/logout.php">[登出]</a>';
         }
         else

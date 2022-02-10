@@ -11,71 +11,7 @@
         <link rel="stylesheet" type="text/css" href="/css/theme.css">
         <script type="text/javascript" src="js/lib/cookie.js"></script>
         <style>
-            .modalBackground
-            {
-                display: none;
-                position: fixed;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,0.9);
-                z-index: 1;
-            }
-            .modal
-            {
-                position: absolute;
-                width: 40%;
-                height: 50%;
-                min-width: 600px;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-                background-color: #222222;
-                border: 3px solid orangered;
-                border-radius: 10px;
-            }
-            .modalTitleContain
-            {
-                position: absolute;
-                font-family: CangErYuMo5;
-                font-size: 30px;
-                color: orangered;
-                top: 10px;
-                left: 20px;
-                right: 20px;
-            }
-            .modalArticleContain
-            {
-                overflow: auto;
-                position: absolute;
-                top: 70px;
-                bottom: 85px;
-                left: 20px;
-                right: 20px;
-            }
-            .modalButtonContain
-            {
-                position: absolute;
-                bottom: 10px;
-                left: 20px;
-                right: 20px;
-                text-align: right;
-            }
-            .modalButton
-            {
-                height: 50px;
-                border: 3px solid orangered;
-                border-radius: 15px;
-                background-color: #222222;
-                margin: 0 15px;
-                color: #ffffff;
-                font-family: CangErYuMo4;
-                font-size: 25px;
-                cursor: pointer;
-            }
+
         </style>
     </head>
     <body>
@@ -84,8 +20,15 @@
         ?>
 
         <h2 id="title">
-            Your IP：<?php
-                echo $_SERVER['REMOTE_ADDR'];
+            <?php
+                if($ISLOGGED)
+                {
+                    echo "欢迎回来，".$_SESSION['name']."!";
+                }
+                else
+                {
+                    echo "您的IP：".$_SERVER['REMOTE_ADDR'];
+                }
             ?>
         </h2>
 
@@ -102,10 +45,13 @@
             <a class="navigation">Games</a>
             <hr />
             <a class="navigation" href="Manage/manage.html">Manage</a>
-            <hr />
         </div>
 
         <a href="TEST/test.html">TEST PAGE</a>
+
+        <?php
+            include("/var/www/secret/foot.php");
+        ?>
 
         <script>
             var colorBool = true
@@ -126,52 +72,8 @@
         </script>
 
         <!--未成年提示与访问检测-->
-        <!--弹窗-->
-        <div class="modalBackground" id="modalBackground">
-            <div class="modal">
-                <div class="modalTitleContain">
-                    <span class="modalTitle">Warning!!</span>
-                    <hr style="margin: 10px auto;"/>
-                </div>
-                <div class="modalArticleContain">
-                    <article>
-                        本网站包含且不限于<strong>色情的、猎奇的</strong>内容。您必须已达您当地的法定年龄并同意您想要观看此类题材。若在浏览本网站过程中您发生<strong>社会性死亡</strong>，本站概不负责。
-                        <br /><br />
-                        为取得进入网站的权限而谎报年龄可能会触犯您的国家、州和/或联邦<strong>法律</strong>。经由进入网站，您就此申明您没有触犯伪证罪条款，您至少有<strong>18岁</strong>（或您存取本站所在地的<strong>法定成年年龄</strong>）。
-                        <br /><br />
-                        您表明基于对您所在地的这些标准和法律的熟悉，您不会藉由要求和接收网站上的任何成人题材而触犯任何这些标准和/或法律。您了解您应确保本站不因您要求、接收和持有网站上的题材之相关责任而受损害。
-                        <br /><br />
-                        您的年龄为<strong>18岁</strong>以上吗？（或您存取本站所在地辖区的<strong>法定成年年龄</strong>）
-                        <br /><br />
-                        经由点下「我已成年」，您已经<strong>阅读并了解</strong>以上的声明。
-                    </article>
-                </div>
-                <div class="modalButtonContain">
-                    <hr style="margin: 10px auto;"/>
-                    <button class="modalButton" id="r18_y">我已成年</button>
-                    <button class="modalButton" id="r18_n">我未成年</button>
-                </div>
-            </div>
-        </div>
-        <!--脚本-->
-        <script>
-            var cookie_r18 = getCookie("r18");
-            var modalBackground = document.getElementById("modalBackground");
-            if(cookie_r18 != "1")
-            {
-                modalBackground.style.display = "block";
-            }
-            var button_r18_y = document.getElementById("r18_y");
-            var button_r18_n = document.getElementById("r18_n");
-            button_r18_y.onclick = function ()
-            {
-                setCookie("r18", "1", 2592000000);
-                modalBackground.style.display = "none";
-            }
-            button_r18_n.onclick = function ()
-            {
-                window.location.href = "https://www.spp.gov.cn/spp/fl/201802/t20180206_364975.shtml"
-            }
-        </script>
+        <?php
+            include("/var/www/secret/modal_r18.php");
+        ?>
     </body>
 </html>

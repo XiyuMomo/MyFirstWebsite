@@ -100,5 +100,9 @@
             <br />
             <a class="startLink" href="waterfall.html">START READING (Waterfall Mode)</a>
         </div>
+
+        <?php
+        include ("/var/www/secret/foot.php");
+        ?>
     </body>
 </html>
