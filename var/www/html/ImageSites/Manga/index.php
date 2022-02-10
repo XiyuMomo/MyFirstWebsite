@@ -86,7 +86,7 @@
         </div>
 
         <?php
-        include ("/var/www/secret/foot.php");
+        include ("/var/www/secret/footer.php");
         ?>
     </body>
 </html>
