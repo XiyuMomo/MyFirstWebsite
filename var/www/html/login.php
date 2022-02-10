@@ -53,7 +53,7 @@
     ?>
 
     <div style="text-align: center">
-        <a class="backNormal" href="/index.html">BACK TO MAINPAGE</a>
+        <a class="backNormal" href="/index.php">BACK TO MAINPAGE</a>
     </div>
     <hr style="width: 90%;"/>
     <h1>LOGIN</h1>
@@ -87,7 +87,7 @@
 
                 if(ISLOGGED())
                 {
-                    header("location:index.php");
+                    echo '<script>window.location.href = "index.php";</script>';
                 }
             }
         ?>

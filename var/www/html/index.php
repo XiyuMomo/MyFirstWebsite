@@ -9,7 +9,6 @@
         <meta charset="utf-8">
         <title>MainPage | TESTING</title>
         <link rel="stylesheet" type="text/css" href="/css/theme.css">
-        <script type="text/javascript" src="js/lib/cookie.js"></script>
         <style>
 
         </style>
@@ -43,8 +42,6 @@
             <a class="navigation">Videos</a>
             <hr />
             <a class="navigation">Games</a>
-            <hr />
-            <a class="navigation" href="Manage/manage.html">Manage</a>
         </div>
 
         <?php
@@ -57,21 +54,16 @@
             {
                 if(colorBool)
                 {
-                    document.getElementById("title").style = "color: orange;";
+                    document.getElementById("title").style.color = "orange";
                     colorBool = false;
                 }
                 else
                 {
-                    document.getElementById("title").style = "color: orangered;";
+                    document.getElementById("title").style.color = "orangered";
                     colorBool = true;
                 }
             }
             setInterval("changeColor()",250);
         </script>
-
-        <!--未成年提示与访问检测-->
-        <?php
-            include("/var/www/secret/modal_r18.php");
-        ?>
     </body>
 </html>

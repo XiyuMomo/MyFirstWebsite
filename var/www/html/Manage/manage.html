@@ -1,63 +1,15 @@
+<?php
+    session_start();
+    require ("/command/PHP/lib/LOGIN.php");
+    $ISLOGGED = ISLOGGED();
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Manage | TESTING</title>
+        <link rel="stylesheet" type="text/css" href="/css/theme.css">
         <style>
-            body
-            {
-                font-size: 40px;
-                font-family: fantasy;
-                background-color: #222222;
-                color: #ffffff;
-                margin: 20px auto;
-            }
-
-            a:link
-            {
-                color: orangered;
-            }
-            a:visited
-            {
-                color: orangered;
-            }
-            a:hover
-            {
-                color: #888888;
-            }
-
-            a.back
-            {
-                text-decoration: none;
-            }
-            a.back:link
-            {
-                color: #ffffff;
-            }
-            a.back:visited
-            {
-                color: #ffffff;
-            }
-            a.back:hover
-            {
-                color: #888888;
-            }
-
-            h1
-            {
-                color: orangered;
-                text-align: center;
-                font-size: 60px;
-            }
-            hr
-            {
-                width: 90%;
-            }
-            div.back
-            {
-                text-align: center;
-            }
-
             .contain
             {
                 width: 90%;
@@ -81,11 +33,17 @@
         </style>
     </head>
     <body>
-        <div class="back">
-            <a href="/index.html" class="back">BACK TO MAINPAGE</a>
+        <?php
+            include("/var/www/secret/header.php");
+        ?>
+
+        <div class="backContain">
+            <a class="backNormal" href="/index.php" class="back">BACK TO MAINPAGE</a>
+            <hr />
         </div>
-        <hr color="orangered"/>
+
         <h1>Management</h1>
+
         <div class="contain">
             <table>
                 <tr>

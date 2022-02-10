@@ -59,7 +59,7 @@
 
         <div class="output">
             <?php
-                require ("/command/PHP/lib/SHA35123.php");
+                require ("/command/PHP/lib/ENCRYPTION.php");
                 require ("/command/PHP/lib/MYSQL_CONN_viewer.php");
                 require ("/command/PHP/lib/NUMSYS.php");
 

@@ -1,5 +1,5 @@
 <?php
-    require("lib/SHA35123.php");
+    require("lib/ENCRYPTION.php");
 
     $test = fgets(STDIN);
     $test = trim($test);

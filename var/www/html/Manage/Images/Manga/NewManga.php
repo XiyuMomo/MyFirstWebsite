@@ -8,39 +8,8 @@
     <head>
         <meta charset="utf-8">
         <title>NewManga</title>
+        <link rel="stylesheet" type="text/css" href="/css/theme.css">
         <style>
-            body
-            {
-                font-size: 30px;
-                font-family: fantasy;
-                background-color: #222222;
-                color: #ffffff;
-                margin: 20px auto;
-                text-align: center;
-            }
-
-            a{
-                text-decoration: none;
-            }
-            a:link
-            {
-                color: #ffffff;
-            }
-            a:visited
-            {
-                color: #ffffff;
-            }
-            a:hover
-            {
-                color: #888888;
-            }
-
-            h1
-            {
-                color: orangered;
-                text-align: center;
-                font-size: 50px;
-            }
 
             table{
                 width: 60%;
@@ -52,6 +21,10 @@
             .TD1
             {
                 width: 200px;
+                text-align: center;
+                font-size: 30px;
+                font-family: CangErYuMo3;
+                line-height: 45px;
             }
             .input
             {
@@ -67,22 +40,42 @@
             .inputSelect
             {
                 height: 25px;
+                font-family: CangErYuMo3;
+                font-size: 15px;
             }
 
+            .submitContain
+            {
+                margin: 30px auto;
+                text-align: center;
+            }
             .submit
             {
                 width: 80px;
                 height: 40px;
-                margin: 10px auto;
+                border: 2px solid orangered;
+                border-radius: 10px;
+                background-color: #222222;
+
+                color: #ffffff;
+                font-family: CangErYuMo4;
+                font-size: 25px;
+
+                cursor: pointer;
             }
         </style>
     </head>
     <body>
-        <div>
-            <a href="/index.html">BACK TO MAINPAGE</a>
+        <?php
+            include("/var/www/secret/header.php");
+        ?>
+        <div class="backContain">
+            <a class="backSmall" href="/index.php">BACK TO MAINPAGE</a>
+            <hr />
         </div>
-        <hr width="90%" color="orangered"/>
+
         <h1>New Manga</h1>
+
         <?php
             if(!$ISLOGGED)
             {
@@ -98,6 +91,10 @@
             {
                 readfile("/var/www/secret/Manage/Images/Manga/NewManga/NewManga_ok.php");
             }
+        ?>
+
+        <?php
+            include("/var/www/secret/footer.php");
         ?>
     </body>
 </html>
