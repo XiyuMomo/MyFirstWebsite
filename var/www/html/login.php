@@ -87,7 +87,7 @@
 
                 if(ISLOGGED())
                 {
-                    header("location:index.html");
+                    header("location:index.php");
                 }
             }
         ?>

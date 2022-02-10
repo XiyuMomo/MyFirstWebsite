@@ -18,7 +18,7 @@
         ?>
 
         <div class="backContain">
-            <a class="backNormal" href="/index.html">BACK TO MAINPAGE</a>
+            <a class="backNormal" href="/index.php">BACK TO MAINPAGE</a>
             <hr />
         </div>
         <h1>Texts</h1>
@@ -28,7 +28,6 @@
             <a class="navigation" href="Novel/index.php">Novel</a>
             <hr />
             <a class="navigation">Reserve</a>
-            <hr />
         </div>
 
         <?php

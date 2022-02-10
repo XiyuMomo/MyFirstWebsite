@@ -47,8 +47,6 @@
             <a class="navigation" href="Manage/manage.html">Manage</a>
         </div>
 
-        <a href="TEST/test.html">TEST PAGE</a>
-
         <?php
             include("/var/www/secret/footer.php");
         ?>

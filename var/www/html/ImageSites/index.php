@@ -19,7 +19,7 @@
         ?>
 
         <div class="backContain">
-            <a class="backNormal" href="/index.html">BACK TO MAINPAGE</a>
+            <a class="backNormal" href="/index.php">BACK TO MAINPAGE</a>
             <hr />
         </div>
 

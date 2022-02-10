@@ -8,4 +8,4 @@
     $_COOKIE['id'] = NULL;
     $_COOKIE['key'] = NULL;
 
-    header("location:index.html");
+    header("location:index.php");

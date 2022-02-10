@@ -45,7 +45,7 @@
         ?>
 
         <div class="center">
-            <a class="backSmall" href="/index.html">BACK TO MAINPAGE</a>
+            <a class="backSmall" href="/index.php">BACK TO MAINPAGE</a>
         </div>
         <hr style="width: 90%;"/>
         <div class="center">
