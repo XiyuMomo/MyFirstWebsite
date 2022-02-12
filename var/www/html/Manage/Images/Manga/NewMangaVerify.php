@@ -1,8 +1,14 @@
+<?php
+    session_start();
+    require ("/command/PHP/lib/LOGIN.php");
+    $ISLOGGED = ISLOGGED();
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset='utf-8'>
         <title>Verify</title>
+        <link rel="stylesheet" type="text/css" href="/css/theme.css">
         <style>
             body
             {
@@ -12,29 +18,6 @@
                 color: #ffffff;
                 margin: 20px auto;
                 text-align: center;
-            }
-
-            a{
-                text-decoration: none;
-            }
-            a:link
-            {
-                color: #ffffff;
-            }
-            a:visited
-            {
-                color: #ffffff;
-            }
-            a:hover
-            {
-                color: #888888;
-            }
-
-            h1
-            {
-                color: orangered;
-                text-align: center;
-                font-size: 50px;
             }
 
             .output
@@ -50,16 +33,21 @@
         </style>
     </head>
     <body>
-        <a href="/index.html">BACK TO MAINPAGE</a>
-        <hr width="90%" color="orangered"/>
-        <a href="NewManga.php">BACK TO PREVIOUS</a>
-        <hr width="90%" color="orangered"/>
+        <?php
+            include("/var/www/secret/header.php");
+        ?>
+
+        <div class="backContain">
+            <a class="backSmall" href="/index.html">BACK TO MAINPAGE</a>
+            <hr />
+            <a class="backSmall" href="NewManga.php">BACK TO PREVIOUS</a>
+            <hr />
+        </div>
 
         <h1>Verify the information</h1>
 
         <div class="output">
             <?php
-                require ("/command/PHP/lib/ENCRYPTION.php");
                 require ("/command/PHP/lib/MYSQL_CONN_viewer.php");
                 require ("/command/PHP/lib/NUMSYS.php");
 
@@ -128,5 +116,9 @@
         <div style="margin: 20px auto;">
             <a href="NewMangaFinish.php">生效</a>
         </div>
+
+        <?php
+            include("/var/www/secret/footer.php");
+        ?>
     </body>
 </html>

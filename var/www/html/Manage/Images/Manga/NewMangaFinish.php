@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require ("/command/PHP/lib/LOGIN.php");
+    $ISLOGGED = ISLOGGED();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,18 +12,20 @@
         <style>
             body
             {
-                font-size: 30px;
-                background-color: #222222;
-                color: #ffffff;
-                margin: 20px auto;
                 text-align: center;
             }
 
         </style>
     </head>
     <body>
-        <a href="/index.php">BACK TO MAINPAGE</a>
-        <hr width="90%" color="orangered"/>
+        <?php
+            include("/var/www/secret/header.php");
+        ?>
+
+        <div class="backContain">
+            <a class="backNormal" href="/index.php">BACK TO MAINPAGE</a>
+            <hr />
+        </div>
 
         <?php
             require("/command/PHP/lib/UpdateManga.php");
@@ -67,6 +74,10 @@
             updateSingleManga($temp[0]);
 
             echo '<h1>更改已提交</h1>';
+        ?>
+
+        <?php
+            include("/var/www/secret/footer.php");
         ?>
     </body>
 </html>
