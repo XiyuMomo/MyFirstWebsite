@@ -2,6 +2,7 @@
     require("GetMangaConf.php");
     require("DELETEDIR.php");
     require("LANGUAGE.php");
+    require("MATH.php");
     getMangaConf();
 
     $dbhost = 'localhost';
@@ -9,42 +10,6 @@
     $dbpass = '1145141919810';
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
     mysqli_query($conn, "set names utf8");  //设置数据库字符格式为utf-8
-
-//=====数字补零函数===========================
-    function zero($x, $totalpage)
-    {
-        $s = '';
-        if($totalpage<10)
-        {
-            $s = (string)$x;
-        }
-        elseif($totalpage<100)
-        {
-            $s = (string)($x+100);
-            $s = substr($s,1,2);
-        }
-        elseif($totalpage<1000)
-        {
-            $s = (string)($x+1000);
-            $s = substr($s,1,3);
-        }
-        elseif($totalpage<10000)
-        {
-            $s = (string)($x+10000);
-            $s = substr($s,1,4);
-        }
-        elseif($totalpage<100000)
-        {
-            $s = (string)($x+100000);
-            $s = substr($s,1,5);
-        }
-        else
-        {
-            $s = (string)($x+1000000);
-            $s = substr($s,1,6);
-        }
-        return $s;
-    }
 
 //=====更新所有漫画函数========================
     function updateAllManga()
@@ -84,7 +49,7 @@
         global $info;
 
         $totalPage = (int)$info['Page'];
-        $firstPage = zero(1, $totalPage);
+        $firstPage = addZero(1, $totalPage);
 
         $template = file(constant("templateIndex"));
         $rows = count($template);
@@ -116,13 +81,13 @@
 
         for($i=1;$i<$totalpage;$i++)
         {
-            $page = zero($i, $totalpage);
+            $page = addZero($i, $totalpage);
             $selectPage = $selectPage."<option value=".$page.">第".$i."页</option>";
         }
 
         for($i=1;$i<=$totalpage;$i++)
         {
-            $page = zero($i, $totalpage);
+            $page = addZero($i, $totalpage);
 
             $template = file(constant("templateView"));
             $rows = count($template);
@@ -183,7 +148,7 @@
 
         for($i=1;$i<=$totalpage;$i++)
         {
-            $page = zero($i, $totalpage);
+            $page = addZero($i, $totalpage);
 
             $imgSRC = Constant("mangaImage")."/".$info['Code']."/$page.jpg";
             $insert = "INSERT INTO m{$info['Code']}".

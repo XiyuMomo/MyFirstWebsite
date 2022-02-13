@@ -1,27 +1,27 @@
 <?php
-    function ZEROPAD($x, $totalpage)
+    function addZero($x, $totalPage)
     {
         $s = '';
-        if($totalpage<10)
+        if($totalPage<10)
         {
             $s = (string)$x;
         }
-        elseif($totalpage<100)
+        elseif($totalPage<100)
         {
             $s = (string)($x+100);
             $s = substr($s,1,2);
         }
-        elseif($totalpage<1000)
+        elseif($totalPage<1000)
         {
             $s = (string)($x+1000);
             $s = substr($s,1,3);
         }
-        elseif($totalpage<10000)
+        elseif($totalPage<10000)
         {
             $s = (string)($x+10000);
             $s = substr($s,1,4);
         }
-        elseif($totalpage<100000)
+        elseif($totalPage<100000)
         {
             $s = (string)($x+100000);
             $s = substr($s,1,5);
@@ -33,5 +33,3 @@
         }
         return $s;
     }
-
-?>
