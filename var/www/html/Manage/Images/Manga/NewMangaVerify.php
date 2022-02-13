@@ -12,11 +12,6 @@
         <style>
             body
             {
-                font-size: 30px;
-                font-family: fantasy;
-                background-color: #222222;
-                color: #ffffff;
-                margin: 20px auto;
                 text-align: center;
             }
 
@@ -44,7 +39,7 @@
             <hr />
         </div>
 
-        <h1>Verify the information</h1>
+        <h2>Verify the information</h2>
 
         <div class="output">
             <?php

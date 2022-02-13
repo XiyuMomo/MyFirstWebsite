@@ -309,3 +309,13 @@ a.userOption:hover
     text-align: left;
     color: orangered;
 }
+
+/*表单相关*/
+.tableHeaderCol1
+{
+    width: 200px;
+    text-align: center;
+    font-size: 30px;
+    font-family: CangErYuMo3;
+    line-height: 45px;
+}

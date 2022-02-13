@@ -18,14 +18,6 @@
                 border: 2px solid orangered;
                 border-radius: 5px;
             }
-            .TD1
-            {
-                width: 200px;
-                text-align: center;
-                font-size: 30px;
-                font-family: CangErYuMo3;
-                line-height: 45px;
-            }
             .input
             {
                 text-align: left;
@@ -69,6 +61,7 @@
         <?php
             include("/var/www/secret/header.php");
         ?>
+
         <div class="backContain">
             <a class="backSmall" href="/index.php">BACK TO MAINPAGE</a>
             <hr />
@@ -80,16 +73,16 @@
             if(!$ISLOGGED)
             {
                 //用户未登录
-                readfile("/var/www/secret/Manage/Images/Manga/NewManga/NewManga_nolog.php");
+                include("/var/www/secret/Manage/Images/Manga/NewManga/NewManga_nolog.php");
             }
             elseif (@$_SESSION['group']!="Administrators" && @$_SESSION['group']!="Uploaders")
             {
                 //用户无权限
-                readfile("/var/www/secret/Manage/Images/Manga/NewManga/NewManga_noper.php");
+                include("/var/www/secret/Manage/Images/Manga/NewManga/NewManga_noper.php");
             }
             else
             {
-                readfile("/var/www/secret/Manage/Images/Manga/NewManga/NewManga_ok.php");
+                include("/var/www/secret/Manage/Images/Manga/NewManga/NewManga_ok.php");
             }
         ?>
 
