@@ -6,4 +6,3 @@
     $serial = (int)$code;
 
     updateSingleManga($serial);
-?>
