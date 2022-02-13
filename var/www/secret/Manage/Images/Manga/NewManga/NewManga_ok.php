@@ -30,7 +30,7 @@
             </td>
         </tr>
     </table>
-    <div class="submitContain">
-        <input type="submit" class="submit" value="提交" />
+    <div class="submitButtonContain">
+        <input type="submit" class="submitButton" value="提交" />
     </div>
 </form>

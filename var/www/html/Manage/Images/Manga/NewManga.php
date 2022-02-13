@@ -35,26 +35,6 @@
                 font-family: CangErYuMo3;
                 font-size: 15px;
             }
-
-            .submitContain
-            {
-                margin: 30px auto;
-                text-align: center;
-            }
-            .submit
-            {
-                width: 80px;
-                height: 40px;
-                border: 2px solid orangered;
-                border-radius: 10px;
-                background-color: #222222;
-
-                color: #ffffff;
-                font-family: CangErYuMo4;
-                font-size: 25px;
-
-                cursor: pointer;
-            }
         </style>
     </head>
     <body>
