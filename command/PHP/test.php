@@ -1,14 +1,19 @@
 <?php
-    require ("lib/MYSQL_CONN_userAdmin.php");
+    $MYSQL_CONN_MangaViewer = mysqli_connect('localhost', 'MangaViewer', '114514');
+    define("MYSQL_CONN_MangaViewer", $MYSQL_CONN_MangaViewer);
+    print_r($MYSQL_CONN_MangaViewer);
+    exit;
+    mysqli_query(constant("MYSQL_CONN_MangaViewer"), "set names utf8");
+    mysqli_select_db(constant("MYSQL_CONN_MangaViewer"), "Info");
 
-    mysqli_select_db($MYSQL_CONN_userAdmin, "web_user");
-    $sql = mysqli_query($MYSQL_CONN_userAdmin, "SELECT * FROM temp_new;");
-    $result = mysqli_fetch_array($sql, MYSQLI_ASSOC);
+    $select = "SELECT * FROM Images_Manga;";
+    $query = mysqli_query(constant("MYSQL_CONN_MangaViewer"), $select);
 
-    $time = $result['registerTime'];
-    echo $time."\n";
-    echo strtotime($time)."\n";
-
-    $time = "20220206000000";
-    echo $time."\n";
-    echo strtotime($time)."\n";
+    while($row = mysqli_fetch_array($query, MYSQLI_ASSOC))
+    {
+        foreach ($row as $value)
+        {
+            echo $value."  ";
+        }
+        echo "\n";
+    }

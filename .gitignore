@@ -1,6 +1,7 @@
 /.idea/
 /others/
 /var/www/html/TEST/
+/var/www/orders/
 
 *.jpg
 *.mp4

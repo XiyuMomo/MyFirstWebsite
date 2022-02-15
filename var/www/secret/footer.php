@@ -11,6 +11,8 @@
             |
             &nbsp;&nbsp;<a class="footLink" href="/TEST/test.html">TestPage</a>&nbsp;&nbsp;
             |
+            &nbsp;&nbsp;<a class="footLink" href="">Update Log</a>&nbsp;&nbsp;
+            |
         </p>
     </div>
 </div>

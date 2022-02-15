@@ -47,23 +47,5 @@
         <?php
             include("/var/www/secret/footer.php");
         ?>
-
-        <script>
-            var colorBool = true
-            function changeColor()
-            {
-                if(colorBool)
-                {
-                    document.getElementById("title").style.color = "orange";
-                    colorBool = false;
-                }
-                else
-                {
-                    document.getElementById("title").style.color = "orangered";
-                    colorBool = true;
-                }
-            }
-            setInterval("changeColor()",250);
-        </script>
     </body>
 </html>
