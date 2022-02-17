@@ -351,3 +351,98 @@ a.userOption:hover
 
     cursor: pointer;
 }
+
+/*登录表单样式*/
+.loginInputBox/*输入区域的外框*/
+{
+    margin: 10px auto;
+
+    width: 40%;
+    min-width: 540px;
+    border: 3px solid orangered;
+    border-radius: 10px;
+    background-color: #444444;
+}
+.loginInputArea/*输入区域，通过margin属性确定四周留白*/
+{
+    margin: 30px 30px;
+}
+.loginInputGroup/*输入组，包含表头和输入框*/
+{
+    width: 100%;
+    height: 75px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.loginInputHeader/*输入框的表头*/
+{
+    font-family: CangErYuMo4;
+    font-size: 25px;
+    color: #ffffff;
+
+    display: inline;
+    width: 40%;
+    line-height: 75px;/*必须与loginInputGroup的height相等*/
+    float: left;
+}
+.loginInputForm/*输入框的区域*/
+{
+    display: inline;
+    width: 60%;
+    line-height: 75px;/*必须与loginInputGroup的height相等*/
+    float: left;
+    vertical-align: middle;
+}
+/*输入：文本*/
+.loginInputText
+{
+    height: 30px;
+    width: 95%;
+
+    border: 2px solid orangered;
+    border-radius: 5px;
+
+    background-color: #333333;
+    color: orangered;
+
+    font-size: 15px;
+    font-family: CangErYuMo4;
+}
+.loginInputText:focus
+{
+    outline: none;
+    border: 3px solid orangered;
+}
+/*输入：密码*/
+.loginInputPass
+{
+    height: 30px;
+    width: 95%;
+
+    border: 2px solid orangered;
+    border-radius: 5px;
+
+    background-color: #333333;
+    color: orangered;
+
+    font-size: 15px;
+}
+.loginInputPass:focus
+{
+    outline: none;
+    border: 3px solid orangered;
+}
+/*输入：下拉选框*/
+.loginInputSelect
+{
+    height: 30px;
+
+    border: 2px solid orangered;
+    border-radius: 5px;
+
+    background-color: #333333;
+    color: orangered;
+
+    font-size: 15px;
+    font-family: CangErYuMo4;
+}
