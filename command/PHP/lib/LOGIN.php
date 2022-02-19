@@ -1,6 +1,8 @@
 <?php
     require ("MYSQL_CONN_userAdmin.php");
     require ("ENCRYPTION.php");
+    require ("COOKIE.php");
+    require ("RANDSTRING.php");
 
     function ISLOGGED(): bool
     {
@@ -29,7 +31,7 @@
         return false;
     }
 
-    function LOGGIN($user, $passwd)
+    function LOGIN($user, $passwd)
     {
         global $MYSQL_CONN_userAdmin;
 
@@ -56,12 +58,19 @@
 
         @session_start();
         $_SESSION['logged'] = true;
-
         getUserInfoByName($user);
+
+        /*if($_POST['keep'])
+        {
+            COOKIE_NEW('id', $_SESSION['id'], $_POST['keep'], DURATION_DAY);
+            $key = RANDSTRING_TIMEMD5();
+            COOKIE_NEW('key', $key, $_POST['keep'], DURATION_DAY);
+        }*/
+
         echo "<p>登录成功！</p>";
     }
 
-    function LOGGOUT($userID)
+    function LOGOUT($userID)
     {
         global $MYSQL_CONN_userAdmin;
         $userID = (int)$userID;

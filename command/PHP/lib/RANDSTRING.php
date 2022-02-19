@@ -6,4 +6,3 @@
         $string2 = (string)rand(0,99999999);
         return md5($string1.$string2);
     }
-?>

@@ -48,10 +48,10 @@
                     </div>
                     <div class="loginInputForm">
                         <select class="loginInputSelect" name="keep">
-                            <option>NO</option>
-                            <option>A WEEK</option>
-                            <option>A MONTH</option>
-                            <option>A YEAR</option>
+                            <option value="0">NO</option>
+                            <option value="7">A WEEK</option>
+                            <option value="30">A MONTH</option>
+                            <option value="365">A YEAR</option>
                         </select>
                     </div>
                 </div>
@@ -69,11 +69,11 @@
                 $user = $_POST['user'];
                 $passwd = $_POST['passwd'];
 
-                LOGGIN($user, $passwd);
+                LOGIN($user, $passwd);
 
                 if(ISLOGGED())
                 {
-                    echo '<script>window.location.href = "index.php";</script>';
+                    //echo '<script>window.location.href = "index.php";</script>';
                 }
             }
         ?>
