@@ -10,41 +10,6 @@
     <title>Images | TESTING</title>
     <link rel="stylesheet" type="text/css" href="/css/theme.css">
     <style>
-        .login
-        {
-            width: 40%;
-            min-width: 480px;
-            margin: 0 auto;
-            border: 3px solid orangered;
-            border-radius: 5px;
-            background-color: #444444;
-        }
-        .inputTable
-        {
-            width: 90%;
-            height: 90%;
-            margin: 20px auto;
-
-            font-size: 30px;
-            font-family: CangErYuMo3;
-        }
-        .inputTD
-        {
-            vertical-align: middle;
-        }
-        .inputText
-        {
-            width: 90%;
-            height: 30px;
-        }
-        .submit
-        {
-            margin: 40px auto;
-            width: 160px;
-            height: 60px;
-            font-size: 30px;
-            font-family: CangErYuMo3;
-        }
     </style>
 </head>
 <body>
@@ -59,20 +24,41 @@
     <h1>LOGIN</h1>
 
     <form action="login.php" method="POST">
-        <div class="login">
-            <table class="inputTable">
-                <tr>
-                    <td>Username:</td>
-                    <td class="inputTD"><input type="text" class="inputText" name="user"/></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td class="inputTD"><input type="password" class="inputText" name="passwd"/></td>
-                </tr>
-            </table>
+        <div class="loginInputBox">
+            <div class="loginInputArea">
+                <div class="loginInputGroup">
+                    <div class="loginInputHeader">
+                        <span>Username:</span>
+                    </div>
+                    <div class="loginInputForm">
+                        <input type="text" class="loginInputText" name="user"/>
+                    </div>
+                </div>
+                <div class="loginInputGroup">
+                    <div class="loginInputHeader">
+                        <span>Password:</span>
+                    </div>
+                    <div class="loginInputForm">
+                        <input type="password" class="loginInputPass" name="passwd"/>
+                    </div>
+                </div>
+                <div class="loginInputGroup">
+                    <div class="loginInputHeader">
+                        <span>Keep login:</span>
+                    </div>
+                    <div class="loginInputForm">
+                        <select class="loginInputSelect" name="keep">
+                            <option>NO</option>
+                            <option>A WEEK</option>
+                            <option>A MONTH</option>
+                            <option>A YEAR</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="text-align: center;">
-            <input type="submit" class="submit" value="LOG IN" />
+        <div style="width: 100%;text-align: center">
+            <input type="submit" class="loginButton" value="LOG IN" />
         </div>
     </form>
 
