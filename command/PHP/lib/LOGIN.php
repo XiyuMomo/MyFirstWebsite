@@ -1,33 +1,42 @@
 <?php
-    require ("MYSQL_CONN_userAdmin.php");
-    require ("ENCRYPTION.php");
-    require ("COOKIE.php");
-    require ("RANDSTRING.php");
+    require ("MYSQL_CONN_userAdmin.php");   //MySql连接
+    require ("ENCRYPTION.php");             //加密函数库
+    require ("COOKIE.php");                 //COOKIE操作函数库
+    require ("RANDSTRING.php");             //随机字符串函数库
 
+    //检测用户是否登录
+    //已登录：true
+    //未登录：false
     function ISLOGGED(): bool
     {
         global $MYSQL_CONN_userAdmin;
-
         mysqli_select_db($MYSQL_CONN_userAdmin, "web_user");
+
+        //检测到SESSION则直接通过
         if(@$_SESSION['logged'])
         {
             return true;
         }
+
+        //检测COOKIE
         if(@$_COOKIE['id'])
         {
-            $userID = (int)$_COOKIE['id'];
+            $userID = (int)$_COOKIE['id'];  //从COOKIE获得用户ID
+            //从COOKIE获得key，与用户id，ip地址共同得到certificate用于身份验证
             @$getCertificate = SHA35123($userID.$_SERVER['REMOTE_ADDR'].$_COOKIE['key']);
-
+            //从数据库查询用户是否登录
             $sql = mysqli_query($MYSQL_CONN_userAdmin, "SELECT * FROM logged WHERE id='$userID';");
             $result = mysqli_fetch_array($sql, MYSQLI_ASSOC);
-            $storageCertificate = $result['certificate'];
+            $storageCertificate = $result['certificate'];   //获得数据库中存储的certificate
 
-            if($getCertificate == $storageCertificate)
+            if($getCertificate == $storageCertificate)      //比对COOKIE得到的certificate与数据库中的是否一致
             {
                 getUserInfoByID($userID);
                 return true;
             }
         }
+
+        //验证均未通过则返回假
         return false;
     }
 
@@ -57,7 +66,6 @@
         }
 
         @session_start();
-        $_SESSION['logged'] = true;
         getUserInfoByName($user);
 
         if($_POST['keep'])
@@ -119,6 +127,7 @@
         $_SESSION['id'] = $info['id'];
         $_SESSION['name'] = $info['name'];
         $_SESSION['group'] = $info['usergroup'];
+        $_SESSION['logged'] = true;
     }
 
     function getUserInfoByName($name)
@@ -132,4 +141,5 @@
         $_SESSION['id'] = $info['id'];
         $_SESSION['name'] = $info['name'];
         $_SESSION['group'] = $info['usergroup'];
+        $_SESSION['logged'] = true;
     }
