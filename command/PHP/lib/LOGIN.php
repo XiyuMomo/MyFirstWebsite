@@ -16,7 +16,7 @@
         if(@$_COOKIE['id'])
         {
             $userID = (int)$_COOKIE['id'];
-            $getCertificate = SHA35123($userID.$_SERVER['REMOTE_ADDR'].$_SERVER['REMOTE_HOST'].$_COOKIE['key']);
+            @$getCertificate = SHA35123($userID.$_SERVER['REMOTE_ADDR'].$_COOKIE['key']);
 
             $sql = mysqli_query($MYSQL_CONN_userAdmin, "SELECT * FROM logged WHERE id='$userID';");
             $result = mysqli_fetch_array($sql, MYSQLI_ASSOC);
@@ -60,24 +60,51 @@
         $_SESSION['logged'] = true;
         getUserInfoByName($user);
 
-        /*if($_POST['keep'])
+        if($_POST['keep'])
         {
+            //操作COOKIE
             COOKIE_NEW('id', $_SESSION['id'], $_POST['keep'], DURATION_DAY);
-            $key = RANDSTRING_TIMEMD5();
+            $key = RANDSTRING_TIMEMD5();    //随机字符串作为key
+            if(isset($_COOKIE['key']))
+            {
+                COOKIE_DELETE('key');
+            }
             COOKIE_NEW('key', $key, $_POST['keep'], DURATION_DAY);
-        }*/
+            //存储凭证
+            if(mysqli_query($MYSQL_CONN_userAdmin, "SELECT * FROM logged WHERE id='".$_SESSION['id']."';"))
+            {
+                $delete = "DELETE FROM logged WHERE id='".$_SESSION['id']."';";
+                mysqli_query($MYSQL_CONN_userAdmin, $delete);
+            }
+            $certificate = SHA35123($_SESSION['id'].$_SERVER['REMOTE_ADDR'].$key);
+            $insert = "INSERT INTO logged (id, certificate, logTime) VALUES ".
+                      "('".$_SESSION['id']."','".$certificate."','".date("YmdHis")."');";
+            if(!mysqli_query($MYSQL_CONN_userAdmin, $insert))
+            {
+                echo "数据库写入错误！";
+                exit;
+            }
+        }
 
         echo "<p>登录成功！</p>";
     }
 
-    function LOGOUT($userID)
+    function LOGOUT()
     {
         global $MYSQL_CONN_userAdmin;
-        $userID = (int)$userID;
-        session_destroy();
+
+        session_start();
+        $userID = (int)$_SESSION['id'];     //获得当前登录用户ID
+        session_destroy();      //清空SESSION
 
         mysqli_select_db($MYSQL_CONN_userAdmin, "web_user");
-        mysqli_query($MYSQL_CONN_userAdmin, "DELETE FROM logged WHERE id='$userID';");
+        mysqli_query($MYSQL_CONN_userAdmin, "DELETE FROM logged WHERE id='$userID';");      //删除logged中用户登陆记录
+
+        //删除COOKIE
+        COOKIE_DELETE('id');
+        COOKIE_DELETE('key');
+
+        header("location:index.php");   //返回首页
     }
 
     function getUserInfoByID($userID)

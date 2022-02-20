@@ -1,11 +1,4 @@
 <?php
-    session_start();
-    if(@$_SESSION['id']!=NULL)
-    {
+    require ("/command/PHP/lib/LOGIN.php");
 
-    }
-    session_destroy();
-    $_COOKIE['id'] = NULL;
-    $_COOKIE['key'] = NULL;
-
-    header("location:index.php");
+    LOGOUT();

@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     session_start();
     require ("/command/PHP/lib/LOGIN.php");
     $ISLOGGED = ISLOGGED();
@@ -73,7 +74,7 @@
 
                 if(ISLOGGED())
                 {
-                    //echo '<script>window.location.href = "index.php";</script>';
+                    echo '<script>window.location.href = "index.php";</script>';
                 }
             }
         ?>
