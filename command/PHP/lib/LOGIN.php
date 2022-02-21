@@ -79,6 +79,7 @@
             }
             COOKIE_NEW('key', $key, $_POST['keep'], DURATION_DAY);
             //存储凭证
+            //若logged中存在该用户记录，则删除后再新增
             if(mysqli_query($MYSQL_CONN_userAdmin, "SELECT * FROM logged WHERE id='".$_SESSION['id']."';"))
             {
                 $delete = "DELETE FROM logged WHERE id='".$_SESSION['id']."';";
